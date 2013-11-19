@@ -5,7 +5,7 @@
 // Login   <arnaud_a@etna-alternance.net>
 //
 // Started on  Mon Nov 18 14:17:03 2013 Alexandre ARNAUD
-// Last update Tue Nov 19 13:43:07 2013 Alexandre ARNAUD
+// Last update Tue Nov 19 15:32:24 2013 Alexandre ARNAUD
 //
 require_once ('BdParser.class.php');
 
@@ -24,17 +24,17 @@ class BD{
   }
 
   function createTable($name, $fields){
-    if($this->tables = $this->bdParser->load($this->file)){
+    if(($this->tables = $this->bdParser->load($this->file)) !== FALSE){
       $table = new CreateTable();
-      if (!$table->setName($name, $this->bdParser->getTablesName()))
+      $tablesNames = $this->bdParser->getTablesName($this->tables);
+      if (!$table->setName($name, $tablesNames))
 	return FALSE;
       if (!$table->setFields($fields))
 	return FALSE;
       $this->tables[] = $table->getTable();
-      print_r($this->tables);
     }
     else
-      return FALSE;
+	return FALSE;
   }
 }
 ?>

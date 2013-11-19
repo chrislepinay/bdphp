@@ -5,7 +5,7 @@
 // Login   <arnaud_a@etna-alternance.net>
 // 
 // Started on  Mon Nov 18 15:23:01 2013 Alexandre ARNAUD
-// Last update Tue Nov 19 12:46:08 2013 Alexandre ARNAUD
+// Last update Tue Nov 19 15:28:51 2013 Alexandre ARNAUD
 //
 class BdParser{
   function __construct(){}
