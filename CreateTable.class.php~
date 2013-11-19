@@ -1,0 +1,18 @@
+<?php
+// CreateTable.class.php for createTable in /Users/alexandrearnaud/ETNA/arnaud_a/include/data_parser
+// 
+// Made by Alexandre ARNAUD
+// Login   <arnaud_a@etna-alternance.net>
+// 
+// Started on  Mon Nov 18 10:57:22 2013 Alexandre ARNAUD
+// Last update Mon Nov 18 10:59:41 2013 Alexandre ARNAUD
+//
+class CreateTable()
+{
+  private $descriptor;
+  function __constructu()
+  {
+    $this->descriptor = new Descriptor();
+  }
+}
+?>

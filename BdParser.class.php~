@@ -1,0 +1,32 @@
+<?php
+// BdParser.class.php for BdFileParser in /Users/alexandrearnaud/ETNA/arnaud_a/include/data_parser
+// 
+// Made by Alexandre ARNAUD
+// Login   <arnaud_a@etna-alternance.net>
+// 
+// Started on  Mon Nov 18 15:23:01 2013 Alexandre ARNAUD
+// Last update Mon Nov 18 15:24:29 2013 Alexandre ARNAUD
+//
+class BdParser
+{
+  private $file;
+  function __construct($file){
+    $this->$file = $file;;
+  }
+
+  function load(){
+    if ($fd = @fopen($this->file, 'a+')){
+      if ($bd = @unserialize($this->file))
+	$this->tables = $bd;
+      else
+	$this->table = array();
+      fclose($fd);
+      return TRUE;
+    }
+    else{
+      echo "bdphp : Can't open bd file\n";
+      return FALSE;
+    }
+  }
+}
+?>

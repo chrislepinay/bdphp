@@ -1,0 +1,29 @@
+<?php
+// BD.class.php for BD in /Users/alexandrearnaud/ETNA/arnaud_a/include/data_parser
+// 
+// Made by Alexandre ARNAUD
+// Login   <arnaud_a@etna-alternance.net>
+// 
+// Started on  Mon Nov 18 14:17:03 2013 Alexandre ARNAUD
+// Last update Mon Nov 18 15:23:56 2013 Alexandre ARNAUD
+//
+class BD{
+  private $file;
+  private $tables;
+
+  function __construct($file){  
+    $this->setfile($file);
+  }
+
+  function setFile($file){
+    $this->file = $file;
+  }
+
+  function createTable($name, $fields){
+    $table = new CreateTable();
+    if (!$table->setName($name, $this->getTableName()))
+      return FALSE;
+    $table->setFields($fields);
+  }
+}
+?>
